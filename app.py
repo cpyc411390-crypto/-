@@ -3,8 +3,8 @@ import json
 from groq import Groq
 
 # 頁面設定
-st.set_page_config(page_title="附中 AI 導覽員")
-st.title("陽明交大附中 - 小北導覽")
+st.set_page_config(page_title="世足 AI 導覽員")
+st.title("足球導覽")
 
 # 讀取背景知識
 try:
@@ -20,7 +20,7 @@ except Exception as e:
 
 # 系統人設指令
 system_instruction = (
-    f"你是陽明交大附中導覽員「小北」。\n"
+    f"你是足球導覽員「小足」。\n"
     f"請優先參考以下內容回答。\n\n"
     f"內容：\n{context_text}"
 )
@@ -38,7 +38,7 @@ if "groq_client" not in st.session_state:
     st.session_state.groq_client = client
 
     st.session_state.messages = [
-        {"role": "assistant", "content": "你好，我是導覽員小北，請隨時發問。"}
+        {"role": "assistant", "content": "你好，我是導覽員小足，請隨時發問。"}
     ]
 
 # 顯示歷史紀錄
